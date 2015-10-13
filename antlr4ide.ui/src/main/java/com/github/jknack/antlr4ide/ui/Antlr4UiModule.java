@@ -141,13 +141,6 @@ public class Antlr4UiModule extends com.github.jknack.antlr4ide.ui.AbstractAntlr
     return org.eclipse.xtext.ui.shared.Access.getWorkspaceProjectsState();
   }
 
-  // FIXME: due to "Xtext based editor does not start since 2.5 without JDT installed",
-  // https://bugs.eclipse.org/bugs/show_bug.cgi?id=424455
-  public void configureIStorage2UriMapperJdtExtensions(final Binder binder) {
-    binder.bind(IStorage2UriMapperJdtExtensions.class).toProvider(
-        Providers.of((IStorage2UriMapperJdtExtensions) null));
-  }
-
   @Override
   public Class<? extends IProjectCreator> bindIProjectCreator() {
     return JdtFreeProjectCreator.class;
